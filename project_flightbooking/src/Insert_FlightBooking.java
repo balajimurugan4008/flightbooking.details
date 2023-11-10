@@ -8,7 +8,7 @@ public class Insert_FlightBooking {
 		String url="jdbc:mysql://127.0.0.1:3306/flightbooking";
 		String Username="root";
 		String password="1110";
-		String Query="insert into details values(?,?,?,?,?,?,?,?)";
+		String Query="insert into details values(?,?,?,?,?,?,?,?,?)";
 		Connection obj=DriverManager.getConnection(url, Username, password);
 		PreparedStatement pst=obj.prepareStatement(Query);
 		pst.setString(1,"delhi");
@@ -19,6 +19,7 @@ public class Insert_FlightBooking {
 		pst.setInt(6, 3500);
 		pst.setString(7, "indigo");	
 		pst.setLong(8, 9809674343l);
+		pst.setBoolean(9, true);
 		pst.executeUpdate();
 		obj.close();
 	}
